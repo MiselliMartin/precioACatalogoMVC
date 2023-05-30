@@ -18,8 +18,7 @@ def home():
 
 @app.route("/conversor", methods=["POST"])
 def conversor():
-    print("Solicitud recibida en /convert")
-    
+
     def convert_to_xlsx(file_path):
         file_name, file_ext = os.path.splitext(file_path)
         if file_ext.lower() == '.xls':
@@ -38,6 +37,7 @@ def conversor():
 
         return file_path
 
+    print("Solicitud recibida en /convert")
     
     # Verificar que la solicitud tenga los campos requeridos
     if "excelFile" not in request.files or "pdfFile" not in request.files:
@@ -52,7 +52,7 @@ def conversor():
     print(f"Archivo PDF recibido: {pdf_file.filename}")
     print(f"Ganancia recibida: {ganancia}")
     print(f"Nuevo nombre del archivo PDF: {new_pdf_name}")
-    
+
     temp_excel_path = "temp_excel" + os.path.splitext(excel_file.filename)[1]
     excel_file.save(temp_excel_path)
 
@@ -60,11 +60,10 @@ def conversor():
     temp_excel_path = convert_to_xlsx(temp_excel_path)
     
     df_precios = pd.read_excel(temp_excel_path)
+    print(df_precios.head())
+    print(temp_excel_path)
+
     df_precios = df_precios.rename(columns={df_precios.columns[0]: 'Código', df_precios.columns[2]: 'Precios'})
-    df_codigo = df_precios[['Código', 'Precios']]
-    
-    df_precios = pd.read_excel(excel_file)
-    df_precios = df_precios.rename(columns={'Unnamed: 0': 'Código', 'LOS PRECIOS NO INCLUYEN IVA, PRECIOS SUJETOS A MODIFICACIONES SIN PREVIO AVISO.': 'Precios'})
     df_codigo = df_precios[['Código', 'Precios']]
     
     df_codigo = df_codigo.dropna(subset=['Código', 'Precios'])
@@ -94,6 +93,8 @@ def conversor():
     new_pdf_buffer = io.BytesIO()
     documento.save(new_pdf_buffer)
     new_pdf_buffer.seek(0)
+
+
 
     print("Generando archivo PDF nuevo...")
     if os.path.exists(temp_excel_path):
