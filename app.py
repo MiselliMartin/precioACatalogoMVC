@@ -17,6 +17,25 @@ def home():
 def conversor():
     print("Solicitud recibida en /convert")
     
+    def convert_to_xlsx(file_path):
+        file_name, file_ext = os.path.splitext(file_path)
+        if file_ext.lower() == '.xls':
+            new_file_path = file_name + '.xlsx'
+            workbook = openpyxl.Workbook()
+            worksheet = workbook.active
+        
+            with xlrd.open_workbook(file_path) as xls_workbook:
+                sheet = xls_workbook.sheet_by_index(0)
+                for row in range(sheet.nrows):
+                    for col in range(sheet.ncols):
+                        worksheet.cell(row=row+1, column=col+1).value = sheet.cell_value(row, col)
+
+            workbook.save(new_file_path)
+            return new_file_path
+
+        return file_path
+
+    
     # Verificar que la solicitud tenga los campos requeridos
     if "excelFile" not in request.files or "pdfFile" not in request.files:
         return "Error: Campos de archivo faltantes", 400
@@ -30,6 +49,16 @@ def conversor():
     print(f"Archivo PDF recibido: {pdf_file.filename}")
     print(f"Ganancia recibida: {ganancia}")
     print(f"Nuevo nombre del archivo PDF: {new_pdf_name}")
+    
+    temp_excel_path = "temp_excel" + os.path.splitext(excel_file.filename)[1]
+    excel_file.save(temp_excel_path)
+
+    # Convertir a .xlsx si es necesario
+    temp_excel_path = convert_to_xlsx(temp_excel_path)
+    
+    df_precios = pd.read_excel(temp_excel_path)
+    df_precios = df_precios.rename(columns={df_precios.columns[0]: 'Código', df_precios.columns[2]: 'Precios'})
+    df_codigo = df_precios[['Código', 'Precios']]
     
     df_precios = pd.read_excel(excel_file)
     df_precios = df_precios.rename(columns={'Unnamed: 0': 'Código', 'LOS PRECIOS NO INCLUYEN IVA, PRECIOS SUJETOS A MODIFICACIONES SIN PREVIO AVISO.': 'Precios'})
@@ -64,6 +93,8 @@ def conversor():
     new_pdf_buffer.seek(0)
 
     print("Generando archivo PDF nuevo...")
+    if os.path.exists(temp_excel_path):
+        os.remove(temp_excel_path)
 
     response = make_response(new_pdf_buffer.getvalue())
     response.headers['Content-Type'] = 'application/pdf'
