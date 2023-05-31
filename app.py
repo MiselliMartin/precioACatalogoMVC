@@ -68,13 +68,15 @@ def conversor():
     
     df_codigo = df_codigo.dropna(subset=['Código', 'Precios'])
     df_codigo = df_codigo[df_codigo['Código'].str.contains('\d')]
+    df_codigo = df_codigo[~df_codigo['Código'].str.contains(r'^\w$')]
+    codigos_tupla = tuple(df_codigo['Código'].astype(str).tolist())
     df_codigo['Precios con ganancia'] = df_codigo['Precios'].apply(lambda x: math.ceil(x * (1 + ganancia/100) / 50) * 50)
     
     pdf_data = pdf_file.read()
     pdf_buffer = io.BytesIO(pdf_data)
     documento = fitz.open("pdf", pdf_buffer) #ACA
 
-    regex = r"\d{2,}/\d{2,}|/\d{2,}\b|\d{2,}/\b"
+    regex = r'\b(?:{})\b'.format('|'.join(map(re.escape, codigos_tupla)))
     for numeroDePagina in range(len(documento)):
         pagina = documento.load_page(numeroDePagina)
         text = pagina.get_text("text")
@@ -97,8 +99,10 @@ def conversor():
 
 
     print("Generando archivo PDF nuevo...")
-    if os.path.exists(temp_excel_path):
-        os.remove(temp_excel_path)
+    if os.path.exists("temp_excel.xlsx"):
+        os.remove("temp_excel.xlsx")
+    if os.path.exists("temp_excel.xls"):
+        os.remove("temp_excel.xls")
 
     response = make_response(new_pdf_buffer.getvalue())
     response.headers['Content-Type'] = 'application/pdf'
