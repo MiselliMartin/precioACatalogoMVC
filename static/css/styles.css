@@ -234,4 +234,18 @@ footer h3, p{
     form{
         padding: 0 0;
     }
+
+    html {
+        height: auto;
+    }
+
+    body {
+        height: auto;
+    }
+}
+
+@media (min-width: 300px) and (min-height: 1030px) {
+  html, body {
+    height: 100vh;
+  }
 }
