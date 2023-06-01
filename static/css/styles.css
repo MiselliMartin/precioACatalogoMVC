@@ -293,8 +293,17 @@ ul{
     header{
         margin: 0 auto;
     }
-
-}
+    
+    h1{
+        font-size: x-large;
+    }
+    
+    form{
+        font-size: medium;
+    }
+    main h2{
+        font-size: large;
+    }
 
 @media (max-width: 400px) {
     footer img{
