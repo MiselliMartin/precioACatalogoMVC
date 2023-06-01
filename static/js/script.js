@@ -40,7 +40,7 @@ document.getElementById("uploadForm").addEventListener("submit", async function(
     var titulo1 = document.getElementById('titulo1')
     var titulo2 = document.getElementById('titulo2')
     var divFin = document.getElementById('fin')
-    var fotoheader = document.getElementById('header')
+    var fotoheader = document.getElementById('fotoheader')
     document.documentElement.style.height = "100vh"
     document.body.style.height = "100vh"
     
