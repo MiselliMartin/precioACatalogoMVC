@@ -342,3 +342,9 @@ ul{
     }
 
 }
+
+@media (max-width: 192px) {
+    footer{
+        font-size: smaller;
+    }
+}
