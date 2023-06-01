@@ -51,6 +51,8 @@ header img {
 
 main{
     width: 50%;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 form{
