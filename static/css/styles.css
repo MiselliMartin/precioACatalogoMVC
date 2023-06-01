@@ -145,7 +145,7 @@ form label{
 }
 
 .enviar:active{
-    background-color: rgba(0, 188, 212, 0.5);
+    background-color: #f9f5f5;
     transition: 0s;
     border: 2px solid #ffffff;
 }
