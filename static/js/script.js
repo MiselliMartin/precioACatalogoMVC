@@ -43,6 +43,7 @@ document.getElementById("uploadForm").addEventListener("submit", async function(
     document.documentElement.style.height = "100vh"
     document.body.style.height = "100vh"
     
+    document.getElementById('fotoheader').style.display= 'none'
     titulo1.style.display = 'none'
     titulo2.style.display = 'none'
     cargando.style.display = 'block'
