@@ -219,6 +219,7 @@ footer{
     text-align: center;
     color: #97978D;
     padding: 10px;
+    padding-bottom: 20px;
     align-items: center;
     justify-content: space-around;
 }
