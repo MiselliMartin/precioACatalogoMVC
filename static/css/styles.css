@@ -174,7 +174,6 @@ main{
 #divCargando{
     display: none;
     text-align: center;
-    height: 60%;
 }
 
 #divCargando h2{
@@ -190,7 +189,6 @@ main{
 #graveError{
     display: none;
     text-align: center;
-    height: 60%;
 }
 
 #graveError img{
@@ -206,7 +204,6 @@ main{
 #fin{
     display: none;
     text-align: center;
-    height: 60%;
 }
 
 #fin img{
