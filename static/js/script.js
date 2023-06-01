@@ -40,12 +40,12 @@ document.getElementById("uploadForm").addEventListener("submit", async function(
     var titulo1 = document.getElementById('titulo1')
     var titulo2 = document.getElementById('titulo2')
     var divFin = document.getElementById('fin')
-    var fotoheader = document.getElementById('fotoheader')
+    var header = document.getElementById('header')
     document.documentElement.style.height = "100vh"
     document.body.style.height = "100vh"
     
 
-    fotoheader.style.display= 'none'
+    header.style.display= 'none'
     titulo1.style.display = 'none'
     titulo2.style.display = 'none'
     cargando.style.display = 'block'
