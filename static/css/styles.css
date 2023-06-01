@@ -1,6 +1,16 @@
+@font-face {
+    font-family: 'Lato Light';
+    src: url('/static/fonts/Lato-Light.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Hind Vadodara Regular';
+    src: url('/static/fonts/Hind-Vadodara-Regular.ttf') format('truetype');
+  }
+
 *{
     box-sizing:border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato Light', 'Roboto', sans-serif;
 }
 
 html, body{
@@ -8,25 +18,39 @@ html, body{
     color: black;
 }
 
-h1{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: xxx-large;
-    font-family: 'Darumadrop One', cursive;
-    display: block;
-    text-align: center;
-}
-
 body{
     margin: 0;
-    background-image: url('/static/images/bgcalisma-1.jpg');
-    background-size: cover;
-    backdrop-filter: brightness(0.7);
+    background-color: #97978D;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     overflow-x: hidden;
+}
+
+header {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 128px;
+}
+  
+header img {
+    margin-right: 10px; /* Ajusta el margen derecho según sea necesario */
+}
+
+#titulo1 {
+    flex-grow: 1; /* Permite que el título ocupe todo el espacio disponible */
+    text-align: center;
+    font-size: xxx-large;
+    display: block;
+    text-align: center;
+    font-family: 'Hind Vadodara Regular', 'Roboto', sans-serif;
+    margin: 0 auto;
+}
+
+main{
+    width: 50%;
 }
 
 form{
@@ -36,6 +60,7 @@ form{
     padding: 20px 20px;
     font-weight: bold;
     font-size: x-large;
+    width: 100%;
 }
 
 fieldset {
@@ -94,12 +119,16 @@ form label{
     transform: translateY(-50%);
 }
 
+.sm{
+    font-size: small;
+}
+
 .enviar{
     width: 40%;
     padding: 15px 0;
     font-size: 18px;
     font-weight: bold;    
-    background: #00bcd4;
+    background: #f9f5f5;
     border-radius: 10px;
     border: 2px solid #000000;
     transition: 1s all;
@@ -111,7 +140,7 @@ form label{
 .enviar:hover{
     color:rgb(0, 0, 0);
     border: 2px solid #000000;
-    background-color: rgba(0, 188, 212, 0.8);
+    background-color: rgb(175 175 175 / 80%);
     transform: scale(1.2);
 }
 
@@ -145,6 +174,7 @@ main{
 #divCargando{
     display: none;
     text-align: center;
+    height: 60%;
 }
 
 #divCargando h2{
@@ -160,6 +190,7 @@ main{
 #graveError{
     display: none;
     text-align: center;
+    height: 60%;
 }
 
 #graveError img{
@@ -175,6 +206,7 @@ main{
 #fin{
     display: none;
     text-align: center;
+    height: 60%;
 }
 
 #fin img{
@@ -182,52 +214,34 @@ main{
 }
 
 footer{
+    display: flex;
     width: 100%;
     background-color: rgb(0, 0, 0, 0.9);
     text-align: center;
-    color: white;
-    padding-bottom: 10px;
+    color: #97978D;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-around;
 }
 
-footer h2{
-    margin-bottom: 4px;
-    margin-top: 4px;
+footer img{
+    width: 400px;
 }
 
-#creado{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
+.palfoo{
+    text-align: start;
 }
 
-.in{
-    flex: 1;
+.palfoo h3{
+    margin: 5px 0px;    
 }
 
-.in h3{
-    display: block;
+.palfoo p{
+    margin: 5px 0px;
 }
 
-.in img{
-    height: 100px;
-    width: 100px;
-    border-radius: 30px;
-}
-
-.in img:hover{
-    transform: scale(1.1);
-}
-
-.in img:active{
-    border: 2px solid #ffffff;
-    transform: scale(1.1);
-}
-
-footer h3, p{
-    display: inline;
+ul{
+    margin: 5px auto;
 }
 
 @media (max-width: 350px) {
@@ -248,4 +262,74 @@ footer h3, p{
   html, body {
     height: 100vh;
   }
+}
+
+@media (max-width: 610px) {
+
+    main {
+        width: auto;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(0, 0, 0, 0.9);
+        text-align: center;
+        color: #97978D;
+        padding: 10px;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .palfoo{
+        margin: 5px auto;
+    }
+}
+
+@media (max-width: 530px) {
+    header img{
+        display: none;
+    }
+
+    header{
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 400px) {
+    footer img{
+        width: 300px;
+    }
+
+}
+
+@media (max-width: 300px) {
+    footer img{
+        width: 200px;
+    }
+
+    h1{
+        font-size: small;
+    }
+
+    body{
+        font-size: smaller;
+    }
+
+    main{
+        font-size: smaller;
+    }
+
+    form{
+        font-size: small;
+    }
+
+}
+
+@media (max-width: 200px) {
+    footer img{
+        display: none;
+    }
+
 }
