@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <link rel="icon" type="image/png" href="../static/images/TS.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Roboto:ital,wght@0,100;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Precio a tu PDF</title>
+</head>
+<body class='body2'>
+    <a href="./" class="icon"><img class='fotofix' src="{{url_for('static', filename='images/home.png')}}" alt=""></a>
+    <a href="./catalogo" class="icon icon2"><img class='fotofix' src="{{url_for('static', filename='images/catalogo.png')}}" alt=""></a>
+
+    <header class="header2">
+        <img id='fotoheader' src="{{url_for('static', filename='images/faviconblanco.png')}}" alt="">
+        <h1 id="titulo1">PONELE PRECIO A TU CATÁLOGO!</h1>
+    </header>
+    
+    
+    <main class="main2">
+      <h2 id="titulo2">↓ Cargue los datos ↓</h2>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <fieldset>
+          <legend>Seleccione el nombre de su proveedor</legend>
+          <select>
+              <option>La bombachita</option>
+          </select>
+      </fieldset>
+
+        <label class="vacio" for="pdfFile">Cargue el catálogo de productos <small class="sm">PDF</small></label>
+        <input class='archivo' type="file" name="pdfFile" id="pdfFile" accept=".pdf" required>
+
+        <label class="vacio" for="excelFile">Cargue la lista de precios <small class="sm">Excel</small></label>
+        <input class='archivo' type="file" name="excelFile" id="excelFile" accept=".xlsx, .xls" required>
+
+        <label class="vacio" for="ganancia">¿Cuál es el porcentaje de ganancia?</label>
+        <div class="input-container">
+          <input type="number" name="ganancia" id="ganancia" min="0" required>
+        </div>
+
+        <label class="vacio" for="newPdfName">¿Qué nombre tendrá el nuevo Pdf?</label>
+        <input type="text" name="newPdfName" id="newPdfName" required>
+        
+        <input class='enviar oculto' type="submit" value="Convertir">
+      </form>
+    </main>
+  
+      <div id="divCargando">
+        <img src="{{url_for('static', filename='images/loading.gif')}}" alt="Cargando..." >
+        <h2>Cargando...</h2>
+        <h3>Esto puede demorar unos minutos...</h3>
+        <h3>Gracias por comprender y utilizar nuestro servicio!</h3>
+      </div>
+
+      <div id="graveError">
+        <img src="{{url_for('static', filename='images/piffle-error.gif')}}" alt="Error" >
+        <h2>No se pudo generar el nuevo PDF.</h2>
+        <h3>Lamentamos los inconvenientes.</h3>
+        <h4>Estamos trabajando en solucionarlos</h4>
+        <a href="https://precio-a-tu-catalogo.onrender.com"><button>Intentar de nuevo</button></a>
+      </div>
+
+      <div id="fin">
+        <img src="{{url_for('static', filename='images/pdf.png')}}"  alt="Fin" >
+        <h2>El PDF se ha generado correctamente!</h2>
+        <h3>Muchas gracias por haber usado nuestro servicio!</h3>
+        <h3>Te esperamos pronto nuevamente!</h3>
+      </div>
+
+<footer>
+  <div>
+    <img src="{{url_for('static', filename='images/logoR-transparente.png')}}" alt="">
+  </div>
+  <div class="palfoo">
+    <h3>¡Agradecemos tu visita!</h3>
+    <p>Contactanos en: <ul><li>techsolutions@gmail.com</li><li>11 3177-1201</li></ul>
+    <p>Equipo TechSolution: <ul><li>Jorge Tricarico</li><li>Leandro Deferrari</li><li>Martín Miselli</li></ul></p>
+    <p>Ventas: <ul><li>Johanna Tricarico</li></ul></p>
+  </div>
+</footer>
+      
+  <script src="{{url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>

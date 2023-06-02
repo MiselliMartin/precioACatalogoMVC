@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
-    <link rel="icon" type="image/png" href="../static/images/favicon.png">
+    <link rel="icon" type="image/png" href="../static/images/TS.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Roboto:ital,wght@0,100;0,500;0,700;1,400&display=swap" rel="stylesheet">
@@ -15,59 +15,44 @@
 
   <header>
     <img id='fotoheader' src="{{url_for('static', filename='images/faviconblanco.png')}}" alt="">
-    <h1 id="titulo1">PONELE PRECIO A TU CATÁLOGO!</h1>
+    <h1 id="titulo1">¡Bienvenidos a TechSolution!</h1>
+    <nav>
+      <ul class="navbar">
+        <li><a href="./">Inicio</a></li>
+        <li><a href="./catalogo">Catálogo</a></li>
+      </ul>
+    </nav>
+    
   </header>
-    
-    
-    <main>
-      <h2 id="titulo2">↓ Cargue los datos ↓</h2>
-      <form id="uploadForm" enctype="multipart/form-data">
-        <fieldset>
-          <legend>Seleccione el nombre de su proveedor</legend>
-          <select>
-              <option>La bombachita</option>
-          </select>
-      </fieldset>
 
-        <label class="vacio" for="pdfFile">Cargue el catálogo de productos <small class="sm">PDF</small></label>
-        <input class='archivo' type="file" name="pdfFile" id="pdfFile" accept=".pdf" required>
+  <main class="mainindex">
 
-        <label class="vacio" for="excelFile">Cargue la lista de precios <small class="sm">Excel</small></label>
-        <input class='archivo' type="file" name="excelFile" id="excelFile" accept=".xlsx, .xls" required>
+    <p class='tex'>  
+      En <strong>TechSolution</strong>, estamos dedicados a brindar soluciones de <strong>automatización digital</strong> para empresas locales, especialmente pequeñas pymes y emprendimientos. Nuestro equipo está listo para ayudar a su empresa a crecer y mejorar su actividad cotidiana a través del uso estratégico de <strong>tecnologías avanzadas.</strong>
+    </p>
 
-        <label class="vacio" for="ganancia">¿Cuál es el porcentaje de ganancia?</label>
-        <div class="input-container">
-          <input type="number" name="ganancia" id="ganancia" min="0" required>
-        </div>
-
-        <label class="vacio" for="newPdfName">¿Qué nombre tendrá el nuevo Pdf?</label>
-        <input type="text" name="newPdfName" id="newPdfName" required>
+    <p class='tex'>
+      En un mundo cada vez más digitalizado, reconocemos la importancia de <strong>optimizar</strong> y <strong>agilizar</strong> los procesos empresariales. Con nuestra experiencia en desarrollo de software y conocimiento profundo de las últimas tendencias tecnológicas, ofrecemos soluciones personalizadas y escalables que se adaptan a las necesidades únicas de su empresa.
+    </p> 
+ 
+    <p class='tex'>
+      ¿Qué podemos hacer por usted? Automatizamos tareas repetitivas y laboriosas, liberando su tiempo y recursos para que pueda concentrarse en lo más importante: <strong>hacer crecer su negocio</strong>. Nuestros servicios abarcan desde la implementación de sistemas de gestión eficientes hasta la integración de herramientas de colaboración y comunicación en línea. Además, ofrecemos asesoramiento experto en la elección de las mejores soluciones tecnológicas para su empresa.
+    </p>  
         
-        <input class='enviar oculto' type="submit" value="Convertir">
-      </form>
-    </main>
-  
-      <div id="divCargando">
-        <img src="{{url_for('static', filename='images/loading.gif')}}" alt="Cargando..." >
-        <h2>Cargando...</h2>
-        <h3>Esto puede demorar unos minutos...</h3>
-        <h3>Gracias por comprender y utilizar nuestro servicio!</h3>
-      </div>
+    <p class='tex'>
+      En <strong>TechSolution</strong>, nos enorgullece ser su socio confiable en el camino hacia la transformación digital. Nuestro compromiso con la <strong>excelencia</strong> y la <strong>satisfacción del cliente</strong> nos impulsa a superar sus expectativas y garantizar el éxito de su empresa en el panorama empresarial en constante evolución.
+    </p>
+        
+    <p class='tex'>
+      No espere más para llevar su negocio al siguiente nivel. Contáctenos hoy mismo y descubra cómo <strong>TechSolution</strong> puede ayudarlo a <strong>optimizar sus procesos</strong>, <strong>aumentar su productividad</strong> y alcanzar el <strong>crecimiento sostenible</strong> que su empresa se merece.
+    </p>  
 
-      <div id="graveError">
-        <img src="{{url_for('static', filename='images/piffle-error.gif')}}" alt="Error" >
-        <h2>No se pudo generar el nuevo PDF.</h2>
-        <h3>Lamentamos los inconvenientes.</h3>
-        <h4>Estamos trabajando en solucionarlos</h4>
-        <a href="https://precio-a-tu-catalogo.onrender.com"><button>Intentar de nuevo</button></a>
-      </div>
+    <p class='texlar'>
+      <strong>¡Confíe en TechSolution para convertir sus desafíos en oportunidades!</strong>
+    </p>
+ 
+  </main>
 
-      <div id="fin">
-        <img src="{{url_for('static', filename='images/pdf.png')}}"  alt="Fin" >
-        <h2>El PDF se ha generado correctamente!</h2>
-        <h3>Muchas gracias por haber usado nuestro servicio!</h3>
-        <h3>Te esperamos pronto nuevamente!</h3>
-      </div>
 
 <footer>
   <div>
@@ -75,12 +60,11 @@
   </div>
   <div class="palfoo">
     <h3>¡Agradecemos tu visita!</h3>
-    <p>Contactanos en: <ul><li>techsolutions@gmail.com</li><li>11 3177-1201</li></ul>
+    <p>Contactanos en: <ul><li>techsolution@gmail.com</li><li>11 3177-1201</li></ul>
     <p>Equipo TechSolution: <ul><li>Jorge Tricarico</li><li>Leandro Deferrari</li><li>Martín Miselli</li></ul></p>
     <p>Ventas: <ul><li>Johanna Tricarico</li></ul></p>
   </div>
 </footer>
       
-  <script src="{{url_for('static', filename='js/script.js')}}"></script>
 </body>
 </html>

@@ -28,11 +28,42 @@ body{
     overflow-x: hidden;
 }
 
+.body2{
+    background-image:url('../images/pexels-cottonbro-studio-7026493.jpg');
+    background-size: cover;
+}
+
 header {
     display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 128px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0px 5px;
+}
+
+.header2{
+    margin-right: 128px;
+    width: auto;
+}
+
+.icon{
+    position: fixed;
+    top: 5px;
+    right: 10px;
+}
+  
+.icon img{
+    width: 50px;
+    height: 50px;
+}
+
+.icon img:hover{
+    transform: scale(1.1);
+    transition: .3s ease;
+}
+
+.icon2{
+    top:60px;
 }
   
 header img {
@@ -47,6 +78,43 @@ header img {
     text-align: center;
     font-family: 'Hind Vadodara Regular', 'Roboto', sans-serif;
     margin: 0 auto;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    font-size: medium;
+    font-family: 'Hind Vadodara Regular'
+  }
+  
+  .navbar li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 10px 5px;
+    text-decoration: none;
+    width: 90px;
+    font-size: large;
+    font-weight: bold;
+  }
+  
+  .navbar li a:hover {
+    background-color: #ddd;
+  }
+
+.tex{
+    font-size: x-large;
+}
+
+.texlar{
+    font-size: xx-large;
+}
+
+.mainindex{
+    width: 65%;
 }
 
 main{
@@ -305,7 +373,7 @@ ul{
     main h2{
         font-size: large;
     }
-
+}
 @media (max-width: 400px) {
     footer img{
         width: 300px;
