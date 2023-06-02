@@ -90,6 +90,10 @@ header {
     top: 125px;
     right: 10px;
 }
+
+.iconFoot{
+    display: none;
+}
   
 header img {
     margin-right: 10px; /* Ajusta el margen derecho según sea necesario */
@@ -396,6 +400,27 @@ ul{
     .palfoo{
         margin: 5px auto;
     }
+
+    .icon{
+        display: none;
+    }
+
+    .iconFoot{
+        position: sticky;
+        right: 5px;
+        visibility: visible;
+        bottom: 5px;
+        display: inline-block;
+        margin-left: 90%;
+    }
+
+    .iconFoot1{
+        bottom: 50px;
+    }
+
+    .iconFoot img{
+        width: 40px;
+    }
 }
 
 @media (max-width: 530px) {
@@ -448,6 +473,14 @@ ul{
     
     .archivo {
         font-size: smaller;
+    }
+
+    .tex {
+        font-size: small;
+    }
+
+    .texlar {
+        font-size: medium;
     }
 
 }
