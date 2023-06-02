@@ -12,8 +12,6 @@
     <title>Precio a tu PDF</title>
 </head>
 <body class='body2'>
-    <a href="./" class="icon"><img class='fotofix' src="{{url_for('static', filename='images/home.png')}}" alt=""></a>
-    <a href="./catalogo" class="icon icon2"><img class='fotofix' src="{{url_for('static', filename='images/catalogo.png')}}" alt=""></a>
 
     <header class="header2">
         <img id='fotoheader' src="{{url_for('static', filename='images/faviconblanco.png')}}" alt="">
@@ -81,8 +79,14 @@
     <p>Equipo TechSolution: <ul><li>Jorge Tricarico</li><li>Leandro Deferrari</li><li>Martín Miselli</li></ul></p>
     <p>Ventas: <ul><li>Johanna Tricarico</li></ul></p>
   </div>
-  <a href="./" class="iconFoot iconFoot1"><img src="{{url_for('static', filename='images/home--.png')}}" alt=""></a>
-  <a href="./catalogo" class="iconFoot"><img src="{{url_for('static', filename='images/catalogo--.png')}}" alt=""></a>
+  <a href="./conocenos" class="iconFoot iconFoot1">
+    <img src="{{url_for('static', filename='images/home--.png')}}" alt="">
+    <span class="iconText">Conocénos</span>
+  </a>
+  <a href="./" class="iconFoot">
+    <img src="{{url_for('static', filename='images/catalogo--.png')}}" alt="">
+    <span class="iconText iconText2">Catálogo</span>
+  </a>
 </footer>
       
   <script src="{{url_for('static', filename='js/script.js')}}"></script>

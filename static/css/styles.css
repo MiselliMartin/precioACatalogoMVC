@@ -39,61 +39,48 @@ header {
     align-items: center;
     width: 100%;
     padding: 0px 5px;
+    padding-right: 132px;
 }
 
 .header2{
-    margin-right: 128px;
     width: auto;
 }
 
-.icon{
-    position: fixed;
-    top: 5px;
-    right: 15px;
-}
-  
-.icon img{
-    width: 50px;
-    height: 50px;
-}
-
-.icon img:hover{
-    transform: scale(1.1);
-    transition: .3s ease;
-}
-
-.icon2{
-    top:60px;
-}
-
-.icon1{
-    visibility: hidden;
-    position: fixed;
-    top: 70px;
-    right: 7px;
-}
-
-.iconindex img{
-    width: 50px;
-    height: 50px;
-}
-
-.iconindex img:hover{
-    transform: scale(1.1);
-    transition: .3s ease;
-}
-
-
-.icon3{
-    visibility: hidden;
-    position: fixed;
-    top: 125px;
-    right: 10px;
-}
-
 .iconFoot{
-    display: none;
+    position: fixed;
+    right: 18px;
+    visibility: visible;
+    top: 110px;
 }
+
+.iconFoot1{
+    top: 60px;
+}
+
+.iconFoot img{
+    width: 40px;
+}
+
+.iconText {
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    pointer-events: none; /* Evita que el texto interfiera con los enlaces */
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .iconText2 {
+    top: +41px
+  }
+
+  .iconFoot:hover .iconText {
+    opacity: 1;
+  }
   
 header img {
     margin-right: 10px; /* Ajusta el margen derecho según sea necesario */
@@ -322,7 +309,7 @@ footer{
 }
 
 footer img{
-    width: 400px;
+    width: 350px;
 }
 
 .palfoo{
@@ -364,19 +351,8 @@ ul{
     #fotoheader{
         display: none;
     }
-    .navbar{
-        display: none;
-    }
-    .icon1{
-        visibility: visible;
-    }
-
-    .icon3{
-        visibility: visible;
-    }
-
-    .header2{
-        margin: 0px 0px;
+    header{
+        padding: 0px 5px;
     }
 }
 
@@ -401,26 +377,31 @@ ul{
         margin: 5px auto;
     }
 
-    .icon{
-        display: none;
-    }
 
-    .iconFoot{
+}
+
+@media (max-width: 565px) {
+    .iconFoot {
         position: sticky;
         right: 5px;
-        visibility: visible;
-        bottom: 5px;
-        display: inline-block;
+        bottom: 10px;
         margin-left: 90%;
-    }
+        transition: visibility 0.3s;
+      }
+    
+      .iconFoot:hover {
+        visibility: visible;
+      }
+    
+      .iconFoot1 {
+        bottom: 55px;
+      }
 
-    .iconFoot1{
-        bottom: 50px;
-    }
-
-    .iconFoot img{
-        width: 40px;
-    }
+      .iconText{
+        display: none;
+      }
+    
+      
 }
 
 @media (max-width: 530px) {

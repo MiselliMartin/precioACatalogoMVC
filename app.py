@@ -14,11 +14,12 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def home():
-    return render_template("index.html")
-
-@app.route("/catalogo", methods=["GET"])
-def catalogo():
     return render_template("catalogo.html")
+    
+
+@app.route("/conocenos", methods=["GET"])
+def conocenos():
+    return render_template("index.html")
 
 @app.route("/conversor", methods=["POST"])
 def conversor():

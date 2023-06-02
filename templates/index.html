@@ -15,13 +15,6 @@
   <header>
     <img id='fotoheader' src="{{url_for('static', filename='images/faviconblanco.png')}}" alt="">
     <h1 id="titulo1">¡Bienvenidos a TechSolution!</h1>
-    <nav>
-      <ul class="navbar">
-        <li><a href="./">Inicio</a></li>
-        <li><a href="./catalogo">Catálogo</a></li>
-      </ul>
-    </nav>
-    
   </header>
 
   <main class="mainindex">
@@ -55,7 +48,7 @@
 
 <footer>
   <div>
-    <img src="{{url_for('static', filename='images/logoR-transparente.png')}}" alt="">
+    <img src="{{url_for('static', filename='images/logo-no-background.svg')}}" alt="">
   </div>
   <div class="palfoo">
     <h3>¡Agradecemos tu visita!</h3>
@@ -63,8 +56,15 @@
     <p>Equipo TechSolution: <ul><li>Jorge Tricarico</li><li>Leandro Deferrari</li><li>Martín Miselli</li></ul></p>
     <p>Ventas: <ul><li>Johanna Tricarico</li></ul></p>
   </div>
-  <a href="./" class="iconFoot iconFoot1"><img src="{{url_for('static', filename='images/home--.png')}}" alt=""></a>
-  <a href="./catalogo" class="iconFoot"><img src="{{url_for('static', filename='images/catalogo--.png')}}" alt=""></a>
+  <a href="./conocenos" class="iconFoot iconFoot1">
+    <img src="{{url_for('static', filename='images/home--.png')}}" alt="">
+    <span class="iconText">Conocénos</span>
+  </a>
+  <a href="./" class="iconFoot">
+    <img src="{{url_for('static', filename='images/catalogo--.png')}}" alt="">
+    <span class="iconText iconText2">Catálogo</span>
+  </a>
+
 </footer>
       
 </body>
