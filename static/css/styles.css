@@ -281,6 +281,14 @@ main{
     width: 150px;
 }
 
+#graveError button {
+    border-radius: 20px;
+    background-color: #00ab94;
+    margin: 10px auto;
+    font-size: larger;
+    padding: 5px 10px;
+}
+
 .vacio::after {
     content: "*";
     color: red;
@@ -327,6 +335,11 @@ footer img{
 ul{
     margin: 5px auto;
 }
+
+footer ul{
+    list-style: none;
+}
+
 
 @media (max-width: 350px) {
     form{
