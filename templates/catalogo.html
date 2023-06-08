@@ -13,11 +13,21 @@
     <title>Precio a tu PDF</title>
 </head>
 <body class='body2'>
-
-    <header class="header2">
-        <img id='fotoheader' src="{{url_for('static', filename='images/faviconblanco.png')}}" alt="">
-        <h1 id="titulo1">PONELE PRECIO A TU CATÁLOGO!</h1>
-    </header>
+  <header>
+    <div id="fotodiv" class="divFoto divFoto2">
+      <img id='fotoheader' src="{{url_for('static', filename='images/faviconblanco.png')}}" alt="">
+    </div>
+    <h1 id="titulo1">PONELE PRECIO A TU CATÁLOGO!</h1>
+    <div id="lanav" class="list list2">
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="./conocenos">Conocénos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
     
     
     <main class="main2">
@@ -46,6 +56,7 @@
         
         <input class='enviar oculto' type="submit" value="Convertir">
       </form>
+      <div class="casita"><i class="fa-solid fa-house"></i></div>
     </main>
   
       <div id="divCargando">
@@ -60,7 +71,7 @@
         <h2>No se pudo generar el nuevo PDF.</h2>
         <h3>Lamentamos los inconvenientes.</h3>
         <h4>Estamos trabajando en solucionarlos</h4>
-        <a href="https://precio-a-tu-catalogo.onrender.com"><button>Intentar de nuevo</button></a>
+        <a href="https://precio-a-tu-catalogo.onrender.com"><button class="botoncito">Intentar de nuevo</button></a>
       </div>
 
       <div id="fin">
@@ -68,6 +79,7 @@
         <h2>El PDF se ha generado correctamente!</h2>
         <h3>Muchas gracias por haber usado nuestro servicio!</h3>
         <h3>Te esperamos pronto nuevamente!</h3>
+        <a href="https://precio-a-tu-catalogo.onrender.com"><button class="botoncito">Volver</button></a>
       </div>
 
 <footer>
@@ -80,14 +92,6 @@
     <p>Equipo TechSolution: <ul><li>Jorge Tricarico</li><li>Leandro Deferrari</li><li>Martín Miselli</li></ul></p>
     <p>Ventas: <ul><li>Johanna Tricarico</li></ul></p>
   </div>
-  <a href="./conocenos" class="iconFoot iconFoot1">
-    <img src="{{url_for('static', filename='images/home--.png')}}" alt="">
-    <span class="iconText">Conocénos</span>
-  </a>
-  <a href="./" class="iconFoot">
-    <img src="{{url_for('static', filename='images/catalogo--.png')}}" alt="">
-    <span class="iconText iconText2">Catálogo</span>
-  </a>
 </footer>
       
   <script src="{{url_for('static', filename='js/script.js')}}"></script>
