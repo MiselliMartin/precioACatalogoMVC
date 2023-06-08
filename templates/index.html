@@ -14,28 +14,31 @@
 </head>
 <body>
   <header>
-    <div class="divFoto">
-      <img id='fotoheader' src="{{url_for('static', filename='images/faviconblanco.png')}}" alt="">
+    <div class="otroHeader">
+      <div class="divFoto">
+        <img id='fotoheader' src="{{url_for('static', filename='images/faviconblanco.png')}}" alt="">
+      </div>
+
+      <div class="list">
+        <nav class="navbar">
+          <ul>
+          <!--
+              <li>
+              <a href="./conocenos">
+                Conocenos
+              </a>
+            </li>
+          -->
+            <li>
+              <a href="./">Precio a tu catálogo</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
+    
 
     <h1 id="titulo1">¡Bienvenidos a TechSolution!</h1>
-
-    <div class="list">
-      <nav class="navbar">
-        <ul>
-        <!--
-            <li>
-            <a href="./conocenos">
-              Conocenos
-            </a>
-          </li>
-        -->
-          <li>
-            <a href="./">Precio a tu catálogo</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
   </header>
 
   <main class="mainindex">

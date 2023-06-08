@@ -14,19 +14,25 @@
 </head>
 <body class='body2'>
   <header>
-    <div id="fotodiv" class="divFoto divFoto2">
-      <img id='fotoheader' src="{{url_for('static', filename='images/faviconblanco.png')}}" alt="">
+    <div class="otroHeader">
+      <div id="fotodiv" class="divFoto divFoto2">
+        <img id='fotoheader' src="{{url_for('static', filename='images/faviconblanco.png')}}" alt="">
+      </div>
+
+      <div id="lanav" class="list list2">
+        <nav class="navbar">
+          <ul>
+            <li>
+              <a href="./conocenos">Conocénos</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
     </div>
+    
     <h1 id="titulo1">PONELE PRECIO A TU CATÁLOGO!</h1>
-    <div id="lanav" class="list list2">
-      <nav class="navbar">
-        <ul>
-          <li>
-            <a href="./conocenos">Conocénos</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+  
   </header>
     
     
@@ -56,7 +62,6 @@
         
         <input class='enviar oculto' type="submit" value="Convertir">
       </form>
-      <div class="casita"><i class="fa-solid fa-house"></i></div>
     </main>
   
       <div id="divCargando">

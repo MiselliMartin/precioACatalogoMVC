@@ -39,6 +39,7 @@ header {
     align-items: center;
     width: 100%;
     padding: 0px 5px;
+    flex-direction: column;
 }
 
 .header2{
@@ -75,6 +76,13 @@ header img {
 
 .list2{
     width: 15%;
+}
+
+.otroHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 ul li{
@@ -114,10 +122,12 @@ li img {
 
 .texlar{
     font-size: xx-large;
+    text-align: center;
 }
 
 .mainindex{
     width: 65%;
+    text-align: start;
 }
 
 main{
@@ -244,10 +254,6 @@ main{
     text-align: center
 }
 
-.casita{
-    display: none;
-}
-
 #divCargando{
     display: none;
     text-align: center;
@@ -353,23 +359,8 @@ footer ul{
   }
 }
 @media (max-width: 650px) {
-    #fotoheader{
-        display: none;
-    }
     header{
         padding: 0px 5px;
-    }
-    .divFoto {
-        display: none;
-    }
-    .divFoto2 {
-        display: none;
-    }
-    .list{
-        display: none;
-    }
-    .casita{
-        display: inline-block;
     }
 }
 
@@ -398,10 +389,6 @@ footer ul{
 }
 
 @media (max-width: 530px) {
-    header img{
-        display: none;
-    }
-
     header{
         margin: 0 auto;
     }
