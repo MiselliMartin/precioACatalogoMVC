@@ -329,7 +329,7 @@ footer{
     width: 50%;
     display: flex;
     text-align: end;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .palfoo2{
@@ -407,10 +407,8 @@ footer ul{
         font-size: large;
     }
 }
-@media (max-width: 400px) {
-    footer img{
-        width: 300px;
-    }
+@media (max-width: 450px) {
+
     .fotoFoot{
         display: none;
     }
