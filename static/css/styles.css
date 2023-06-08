@@ -71,7 +71,7 @@ header img {
 .list{
     display: flex;
     justify-content: flex-end;
-    width: 25%;
+    width: 60%
 }
 
 .list2{
