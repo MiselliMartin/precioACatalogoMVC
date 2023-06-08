@@ -316,6 +316,7 @@ footer{
 
 .fotoFoot{
     width: 50%;
+    max-width: 350px;
 }
 
 .fotoFoot2{
