@@ -21,6 +21,10 @@ def home():
 def conocenos():
     return render_template("index.html")
 
+@app.route("/status", methods=["GET", "POST"])
+def get_status():
+    return "ok"
+
 @app.route("/conversor", methods=["POST"])
 def conversor():
 
