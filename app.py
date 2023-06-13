@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, make_response, send_file
+from flask_cors import CORS
 from werkzeug.wrappers import Response
 import fitz #as f
 import re
@@ -11,6 +12,7 @@ import openpyxl
 
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/", methods=["GET"])
 def home():
@@ -21,9 +23,11 @@ def home():
 def conocenos():
     return render_template("index.html")
 
-@app.route("/status", methods=["GET", "POST"])
+@app.route("/status")
 def get_status():
-    return "ok"
+    response = app.make_response('ok')
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 @app.route("/conversor", methods=["POST"])
 def conversor():
