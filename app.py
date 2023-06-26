@@ -10,7 +10,6 @@ import xlrd
 import os
 import openpyxl
 
-
 app = Flask(__name__)
 CORS(app)
 
@@ -103,7 +102,21 @@ def conversor():
                     bbox = inst.irect
                     new_y = bbox.y0 - 70
                     new_x = bbox.x0
-                    pagina.insert_text((new_x, new_y), str(precio), fontsize=20, fill=(1, 0.3, 0), render_mode=2)
+                    
+                    radius = 10
+                    rect_height = bbox.height*0.8
+                    oval_x0 = new_x
+                    oval_y0 = new_y - rect_height
+                    oval_x1 = new_x + bbox.width + 4
+                    oval_y1 = new_y + rect_height // 2
+                    pagina.draw_rect((oval_x0, oval_y0, oval_x1, oval_y1), fill=(1, 1, 1))
+
+                    # Imprimir el precio en negro
+                    font_size = 18
+                    font_path = "static/fonts/Lato-Light.ttf"
+                    pagina.insert_text((new_x, new_y), str(precio), fontsize=font_size, fill=(0, 0, 0), fontfile=font_path, render_mode=2)
+
+                    
     
     new_pdf_buffer = io.BytesIO()
     documento.save(new_pdf_buffer)
@@ -124,4 +137,4 @@ def conversor():
 
     return response
 
-app.run(host= "0.0.0.0", port= 3000) 
+app.run(host= "0.0.0.0", port= 3000, debug=True) 

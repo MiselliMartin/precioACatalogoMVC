@@ -28,11 +28,6 @@ body{
     overflow-x: hidden;
 }
 
-.body2{
-    background-image:url('../images/pexels-cottonbro-studio-7026493.jpg');
-    background-size: cover;
-}
-
 header {
     display: flex;
     justify-content: space-around;
@@ -61,7 +56,7 @@ header img {
 #titulo1 {
     flex-grow: 1; /* Permite que el título ocupe todo el espacio disponible */
     text-align: center;
-    font-size: xxx-large;
+    font-size: 2em;
     display: block;
     text-align: center;
     font-family: 'Hind Vadodara Regular', 'Roboto', sans-serif;
@@ -136,14 +131,16 @@ main{
     margin-left: 5px;
 }
 
-form{
+form {
     text-align: center;
-    border: 2px solid black;
+    border: 2px solid #afafaf;
     border-radius: 20px;
     padding: 20px 20px;
     font-weight: bold;
     font-size: x-large;
     width: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 2px 6px 16px;
 }
 
 fieldset {
@@ -352,6 +349,11 @@ footer ul{
     list-style: none;
 }
 
+@media (max-width: 1000px) {
+    .main2{
+        width: 75%;
+    }
+}
 
 @media (max-width: 350px) {
     form{
@@ -405,6 +407,9 @@ footer ul{
     }
     main h2{
         font-size: large;
+    }
+    #titulo1{
+        font-size: 1.5em;
     }
 }
 @media (max-width: 450px) {
